@@ -1,14 +1,10 @@
-# Very short description of the package
+# Introduction
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/akk7300/pushy.svg?style=flat-square)](https://packagist.org/packages/akk7300/pushy)
-[![Total Downloads](https://img.shields.io/packagist/dt/akk7300/pushy.svg?style=flat-square)](https://packagist.org/packages/akk7300/pushy)
-![GitHub Actions](https://github.com/akk7300/pushy/actions/workflows/main.yml/badge.svg)
-
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+This package allows you to send push notifications using [Pushy](https://pushy.me/). It provides a convenient way to integrate Pushy's services into your Laravel applications.
 
 ## Installation
 
-You can install the package via composer:
+You can install the package via Composer:
 
 ```bash
 composer require akk7300/pushy
@@ -16,36 +12,19 @@ composer require akk7300/pushy
 
 ## Usage
 
-```php
-// Usage description here
+ ```php
+use Akk7300\Pushy\Facade\Pushy;
+
+Pushy::withTitle('Testing')
+    ->withBody('Testing message')
+    ->withAdditional(['extra' => 'This is an extra field'])
+    ->sendTo(['pushy-token']);
 ```
-
-### Testing
-
-```bash
-composer test
-```
-
-### Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-### Security
-
-If you discover any security related issues, please email aungkhant2233@gmail.com instead of using the issue tracker.
-
-## Credits
-
--   [Aung Khant](https://github.com/akk7300)
--   [All Contributors](../../contributors)
 
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
 
 ## Laravel Package Boilerplate
 
