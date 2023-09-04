@@ -10,6 +10,20 @@ You can install the package via Composer:
 composer require akk7300/pushy
 ```
 
+**Copy Config**
+
+Run `php artisan vendor:publish --provider="Akk7300\Pushy\PushyServiceProvider"` to publish the `pushy.php` config file.
+
+**Get API Secret Key**
+
+Get Authentication Key from https://dashboard.pushy.me/
+
+**Configure pushy.php as needed**
+
+```
+'api_key' => '{API_SECRET_KEY}'
+```
+
 ## Usage
 
  ```php
