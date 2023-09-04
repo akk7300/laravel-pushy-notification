@@ -1,0 +1,54 @@
+{
+    "name": "akk7300/pushy",
+    "description": "laravel notification sending with pushy",
+    "keywords": [
+        "akk7300",
+        "pushy"
+    ],
+    "homepage": "https://github.com/akk7300/pushy",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Aung Khant",
+            "email": "aungkhant2233@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5|^8.0",
+        "illuminate/support": "^7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Akk7300\\Pushy\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Akk7300\\Pushy\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Akk7300\\Pushy\\PushyServiceProvider"
+            ],
+            "aliases": {
+                "Pushy": "Akk7300\\Pushy\\Facade\\Pushy"
+            }
+        }
+    }
+}
