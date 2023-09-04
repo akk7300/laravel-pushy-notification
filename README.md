@@ -21,11 +21,6 @@ Pushy::withTitle('Testing')
     ->sendTo(['pushy-token']);
 ```
 
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-
 ## Laravel Package Boilerplate
 
 This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
