@@ -31,25 +31,22 @@ class Pushy
 	{
 	    $client = new Client();
 
-	    $data = [
-	        "to" => $token,
+	    $payLoad = [
+	        'to' => $token,
 	        'notification' => [
 	            "badge" => 1,
 	            "sound" => "ping.aiff",
 	            "title"   => $this->title,
 	            "body" => $this->body,
-	        ]
+	        ],
+	        'data' => $this->data
 	    ];
-
-	    if ($this->data) {
-	        $data['data'] = array_merge($data['data'], $this->data);
-	    }
 
 	    $response = $client->post("https://api.pushy.me/push?api_key=" . config('pushy.api_key'), [
 	        'headers' => [
 	            'Content-Type' => 'application/json',
 	        ],
-	        'json' => $data,
+	        'json' => $payLoad,
 	    ]);
 	}
 
