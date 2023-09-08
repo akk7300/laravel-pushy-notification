@@ -39,7 +39,9 @@ class Pushy
 	            "title"   => $this->title,
 	            "body" => $this->body,
 	        ],
-	        'data' => $this->data
+	        'data' => [ 
+	        	$this->data
+	        ]
 	    ];
 
 	    $response = $client->post("https://api.pushy.me/push?api_key=" . config('pushy.api_key'), [
