@@ -21,7 +21,7 @@ class Pushy
 		return $this;
 	}
 
-	public function withData($message)
+	public function withData($data)
 	{
 		$this->data = $data;
 		return $this;
