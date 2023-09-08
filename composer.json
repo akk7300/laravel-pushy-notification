@@ -50,5 +50,7 @@
                 "Pushy": "Akk7300\\Pushy\\Facade\\Pushy"
             }
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
