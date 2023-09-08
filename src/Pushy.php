@@ -7,7 +7,7 @@ class Pushy
 {
 	protected $title;
 	protected $body;
-	protected $message;
+	protected $data;
 
 	public function withTitle($title)
 	{
@@ -21,9 +21,9 @@ class Pushy
 		return $this;
 	}
 
-	public function withMessage($message)
+	public function withData($message)
 	{
-		$this->message = $message;
+		$this->data = $data;
 		return $this;
 	}
 
@@ -38,8 +38,8 @@ class Pushy
 	            "sound" => "ping.aiff",
 	            "title"   => $this->title,
 	            "body" => $this->body,
-	        ]
-	        'message' => $this->message
+	        ],
+	        'data' => $this->data
 	    ];
 
 	    $response = $client->post("https://api.pushy.me/push?api_key=" . config('pushy.api_key'), [
