@@ -38,9 +38,12 @@ class Pushy
 	            "sound" => "ping.aiff",
 	            "title"   => $this->title,
 	            "body" => $this->body,
-	        ],
-	        'data' => $this->data
+	        ]
 	    ];
+
+	    if ($this->data) {
+	        $data['data'] = array_merge($data['data'], $this->data);
+	    }
 
 	    $response = $client->post("https://api.pushy.me/push?api_key=" . config('pushy.api_key'), [
 	        'headers' => [
