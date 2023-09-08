@@ -31,7 +31,7 @@ use Akk7300\Pushy\Facade\Pushy;
 
 Pushy::withTitle('Testing')
     ->withBody('Testing message')
-    ->withAdditional(['extra' => 'This is an extra field'])
+    ->withData(['message' => 'This is an message field'])
     ->sendTo(['pushy-token']);
 ```
 
