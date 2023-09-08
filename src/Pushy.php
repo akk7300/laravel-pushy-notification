@@ -7,7 +7,7 @@ class Pushy
 {
 	protected $title;
 	protected $body;
-	protected $additional;
+	protected $message;
 
 	public function withTitle($title)
 	{
@@ -21,9 +21,9 @@ class Pushy
 		return $this;
 	}
 
-	public function withAdditional($additional)
+	public function withMessage($message)
 	{
-		$this->additional = $additional;
+		$this->message = $message;
 		return $this;
 	}
 
@@ -35,19 +35,12 @@ class Pushy
 	        "to" => $token,
 	        'notification' => [
 	            "badge" => 1,
-	            "sound" => "ping.aiff"
-	        ],
-	        'data' => [
-	            'message' => [
-	                "title"   => $this->title,
-	                "message" => $this->body,
-	            ],
-	        ],
+	            "sound" => "ping.aiff",
+	            "title"   => $this->title,
+	            "body" => $this->body,
+	        ]
+	        'message' => $this->message
 	    ];
-
-	    if ($this->additional) {
-	        $data['data'] = array_merge($data['data'], $this->additional);
-	    }
 
 	    $response = $client->post("https://api.pushy.me/push?api_key=" . config('pushy.api_key'), [
 	        'headers' => [
