@@ -8,6 +8,7 @@ class Pushy
 	protected $title;
 	protected $body;
 	protected $data;
+	protected $tokens = [];
 
 	public function withTitle($title)
 	{
@@ -27,12 +28,18 @@ class Pushy
 		return $this;
 	}
 
-	public function sendTo($token)
+	public function sendTo($tokens)
+    {	
+        $this->tokens = $tokens;
+        $this->send();
+    }
+
+	public function send()
 	{
 	    $client = new Client();
 
-	    $payLoad = [
-	        'to' => $token,
+	    $payLoad = [	
+	        'to' => $this->tokens,
 	        'notification' => [
 	            "badge" => 1,
 	            "sound" => "ping.aiff",
